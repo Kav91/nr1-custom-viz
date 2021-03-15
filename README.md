@@ -2,7 +2,9 @@
 
 # Visualizations
 
-- NRQL Status Widget
+### NRQL Status Widget
+
+![NRQL Status Widget](images/nrql-status-widget-1.png)
 
 ## Getting started
 
@@ -17,7 +19,16 @@ Visit https://one.newrelic.com/?nerdpacks=local and :sparkles:
 
 ## Dashboard deployment
 
+https://developer.newrelic.com/build-apps/build-visualization#deploy-and-use-your-visualization
+
+```
 This needs to be deployed into your account so that the custom visualizations can be added to dashboards.
+After this has been deployed, ensure you navigate to the app and add to the account.
+```
+
+## Documentation
+
+https://developer.newrelic.com/build-apps/build-visualization#deploy-and-use-your-visualization
 
 ## Creating new artifacts
 

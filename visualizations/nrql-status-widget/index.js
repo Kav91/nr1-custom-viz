@@ -166,8 +166,15 @@ export default class NrqlStatusWidget extends React.Component {
                   <div className="flex-col">
                     {displayMetric && (
                       <div
+                        title={metricValue}
                         className="flex-item"
-                        style={{ color: "white", fontSize: "17vh" }}
+                        style={{
+                          color: "white",
+                          fontSize: "17vh",
+                          width,
+                          textOverflow: "ellipsis",
+                          overflow: "hidden",
+                        }}
                       >
                         {metricValue}
                         {metricSuffix && (
