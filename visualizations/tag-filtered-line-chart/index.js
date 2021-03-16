@@ -164,8 +164,6 @@ export default class TagFilteredLineChart extends React.PureComponent {
             workingData = removeEntityGuids(data);
           }
 
-          console.log(workingData);
-
           stateUpdate.chartData = workingData;
           this.setState(stateUpdate);
         }
