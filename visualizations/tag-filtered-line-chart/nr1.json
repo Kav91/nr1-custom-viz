@@ -1,0 +1,83 @@
+{
+  "schemaType": "VISUALIZATION",
+  "id": "tag-filtered-line-chart",
+  "displayName": "Tag Filtered Line Chart",
+  "description": "Line chart with entity tag filtering",
+  "configuration": [
+    {
+      "name": "accountId",
+      "title": "Account ID",
+      "description": "Account ID to be associated with the query",
+      "type": "number"
+    },
+    {
+      "name": "query",
+      "title": "Query (must contain TIMESERIES & FACET entityGuid)",
+      "description": "NRQL query eg. FROM SystemSample SELECT count(*) TIMESERIES FACET entityGuid",
+      "type": "nrql"
+    },
+    {
+      "name": "showGuid",
+      "title": "Show entity guid in key",
+      "description": "Show entity guid in key",
+      "type": "boolean"
+    },
+    {
+      "name": "pollInterval",
+      "title": "Poll interval in seconds (default 60)",
+      "description": "Data polling interval",
+      "type": "number"
+    },
+    {
+      "name": "requiredTags",
+      "title": "Define required entity tags",
+      "type": "collection",
+      "items": [
+        {
+          "name": "tag",
+          "title": "Entity Tag",
+          "description": "The entity tag",
+          "type": "string"
+        },
+        {
+          "name": "value",
+          "title": "Tag value (regex accepted)",
+          "description": "Value of entity tag (if no value supplied, will check for tag existence)",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "tagFacets",
+      "title": "Add entity tag to facet",
+      "type": "collection",
+      "items": [
+        {
+          "name": "tag",
+          "title": "Entity Tag",
+          "description": "The entity tag",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "tagBridges",
+      "title": "Define entity tags to match against event attributes",
+      "type": "collection",
+      "items": [
+        {
+          "name": "entityTag",
+          "title": "Entity Tag",
+          "description": "The entity tag to target against the attribute in the event data",
+          "type": "string"
+        },
+        {
+          "name": "eventAttribute",
+          "title": "Event Attribute",
+          "description": "The attribute to target against the entity tag",
+          "type": "string"
+        }
+      ]
+    }
+  ]
+}
