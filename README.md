@@ -6,6 +6,16 @@
 
 ![NRQL Status Widget](images/nrql-status-widget-1.png)
 
+### Entity Tag filtered Line Chart
+
+Features:
+
+- Add required tags
+- Additional facets from tags
+- Entity tag and event attribute bridging
+
+![Entity tag filtered line chart](images/tag-filtered-line-chart-1.png)
+
 ## Getting started
 
 Run the following scripts:
