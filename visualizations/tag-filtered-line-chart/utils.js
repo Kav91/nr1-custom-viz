@@ -30,7 +30,7 @@ export const checkQuery = (query) => {
   const lowerQuery = query.toLowerCase();
   if (!query) {
     errors.push(
-      "Required: Query eg. FROM SystemSample SELECT count(*) TIMESERIES FACET entityName, entityGuid"
+      "Required: Query eg. FROM SystemSample SELECT count(*) TIMESERIES FACET entityName, entityGuid LIMIT 100"
     );
   } else {
     if (!lowerQuery.includes("timeseries")) {

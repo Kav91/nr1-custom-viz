@@ -210,6 +210,15 @@ const EmptyState = (errors) => (
       >
         This custom visualization allows you to filter your line chart with
         entity tags. Initial load may take time.
+      </HeadingText>{" "}
+      <br />
+      <HeadingText
+        spacingType={[HeadingText.SPACING_TYPE.LARGE]}
+        type={HeadingText.TYPE.HEADING_3}
+      >
+        Note: Tag processing comes after NRQL querying so you may have to
+        increase your query limit for this chart to be effective. Eg. add LIMIT
+        100
       </HeadingText>
       <br />
       <HeadingText
@@ -231,7 +240,6 @@ const EmptyState = (errors) => (
           );
         })}
       </div>
-
       <HeadingText
         spacingType={[HeadingText.SPACING_TYPE.LARGE]}
         type={HeadingText.TYPE.HEADING_5}
