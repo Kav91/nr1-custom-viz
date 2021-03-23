@@ -105,6 +105,7 @@ export default class TagFilteredLineChart extends React.PureComponent {
   fetchData = async () => {
     const { accountId, query } = this.state;
     const { data, error } = await NrqlQuery.query({ query, accountId });
+    const chartData = { chart: data };
 
     if (error) {
       this.setState({ nrqlError: error });
@@ -113,14 +114,14 @@ export default class TagFilteredLineChart extends React.PureComponent {
         {
           processingEntityData: true,
           nrqlError: null,
-          rawData: data,
+          rawData: chartData,
           loading: false,
         },
         async () => {
           const stateUpdate = { chartData: [], processingEntityData: false };
 
           // fetch entity data data
-          const guids = deriveGuids(data);
+          const guids = deriveGuids(chartData);
           const guidsToFetch = guids.filter((guid) => !this.state[guid]);
 
           if (guidsToFetch.length > 0) {
@@ -148,20 +149,25 @@ export default class TagFilteredLineChart extends React.PureComponent {
           const { requiredTags, tagFacets, showGuid, tagBridges } = this.state;
           let workingData = processRequiredTags(
             requiredTags,
-            data,
+            chartData,
             this.state,
             stateUpdate
           );
-          workingData = addFacetTags(data, tagFacets, this.state, stateUpdate);
+          workingData = addFacetTags(
+            workingData,
+            tagFacets,
+            this.state,
+            stateUpdate
+          );
           workingData = processTagBridges(
-            data,
+            workingData,
             tagBridges,
             this.state,
             stateUpdate
           );
 
           if (!showGuid) {
-            workingData = removeEntityGuids(data);
+            workingData = removeEntityGuids(workingData);
           }
 
           stateUpdate.chartData = workingData;

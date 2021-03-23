@@ -10,8 +10,8 @@
 
 Features:
 
-- Add required tags
-- Additional facets from tags
+- Set required entity tags
+- Add additional facets from entity tags
 - Entity tag and event attribute bridging
 
 ![Entity tag filtered line chart](images/tag-filtered-line-chart-1.png)

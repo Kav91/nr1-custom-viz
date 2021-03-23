@@ -1,7 +1,7 @@
 {
   "private": true,
   "name": "nr1-custom-viz-pack",
-  "version": "1.2.2",
+  "version": "1.2.3",
   "scripts": {
     "start": "nr1 nerdpack:serve",
     "test": "exit 0"
@@ -10,9 +10,19 @@
     "uuid": "610fc832-fcdd-4a19-bdc8-ae713e2457af"
   },
   "dependencies": {
+    "@newrelic/nr1-community": "^1.2.0",
+    "lodash.clonedeep": "^4.5.0",
+    "lodash.orderby": "^4.6.0",
+    "mapbox": "^1.0.0-beta10",
     "prop-types": "^15.6.2",
     "react": "^16.6.3",
-    "react-dom": "^16.6.3"
+    "react-dom": "^16.6.3",
+    "react-map-gl": "^5.2.9",
+    "react-select": "^3.1.1",
+    "react-sidebar": "^3.0.2",
+    "semantic-ui-react": "^0.84.0",
+    "styled-components": "^4.4.1",
+    "uuid": "^8.3.1"
   },
   "browserslist": [
     "last 2 versions",

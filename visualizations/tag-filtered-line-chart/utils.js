@@ -195,8 +195,10 @@ export const processRequiredTags = (
     !t.tag || (!t.tag && !t.value) ? false : true
   );
 
+  console.log(reqTags);
+
   if (reqTags.length > 0) {
-    data.chart = data.chart.filter((item) => {
+    const newChartData = (data.chart || []).filter((item) => {
       let passed = false;
 
       const guid = item.metadata.groups.find(
@@ -213,7 +215,7 @@ export const processRequiredTags = (
         reqTags.forEach((t) => {
           const foundKey = tags.find((entityTag) => entityTag.key === t.tag);
           if (foundKey) {
-            if (!t.value && foundKey) {
+            if (!t.value) {
               passedChecks++;
             } else {
               try {
@@ -235,7 +237,7 @@ export const processRequiredTags = (
       return passed;
     });
 
-    return data;
+    return { chart: newChartData };
   } else {
     return data;
   }
