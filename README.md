@@ -2,9 +2,10 @@
 
 # Visualizations
 
-### NRQL Status Widget
+### NRQL Status Widget (moved to https://github.com/newrelic-experimental/nr1-nrql-status-widget)
 
 ![NRQL Status Widget](images/nrql-status-widget-1.png)
+https://github.com/newrelic-experimental/nr1-nrql-status-widget
 
 ### Entity Tag filtered Line Chart
 
